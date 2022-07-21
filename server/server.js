@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const { errorHandler } = require('./helper/error');
+const connectDB = require('./config/connection.js');
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 5000;
 
