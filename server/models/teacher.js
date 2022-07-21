@@ -13,10 +13,6 @@ const teacherSchema = mongoose.Schema({
         type: String,
         required: [true, 'Please create a unique password']
     },
-    // class_number: {
-    //     type: String,
-    //     required: [true, 'Please add your classroom number']
-    // },
 },
     {
         timestamps: true

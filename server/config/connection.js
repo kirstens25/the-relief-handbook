@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/techmatchup', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+const connectDB = async () => {
+  try {
+    const connection = await mongoose.connect(process.env.MONGODB_URI)
 
-module.exports = mongoose.connection;
+  console.log(`MongoDB Connected: ${connection.connection.host}`.cyan.underline)
+  } catch (error) {
+    console.log(error)
+    process.exit(1)
+  }
+}
+
+module.exports = connectDB;
