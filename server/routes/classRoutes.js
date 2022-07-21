@@ -7,7 +7,7 @@ const {
     deleteClass,
   } = require('../controllers/classController')
   
-  const { protect } = require('../middleware/authMiddleware') // middleware still needed
+  const { protect } = require('../helper/auth') // middleware still needed
   
   router.route('/').get(protect, getClass).post(protect, createClass)
   router.route('/:id').delete(protect, deleteClass).put(protect, updateClass)

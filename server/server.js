@@ -1,6 +1,6 @@
 const path = require('path');
 const express = require('express');
-const { errorHandler } = require('.'); // Middleware error - come back to this
+const { errorHandler } = require('./helper/error');
 const dotenv = require('dotenv').config();
 const port = process.env.PORT || 5000;
 
