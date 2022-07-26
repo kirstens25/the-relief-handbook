@@ -11,6 +11,9 @@ const classSchema = mongoose.Schema(
             required: true ['Please add a class number.']
         }
     },
+
+    // add fields here above (see screenshot from Sam)
+
     {
         timestamps: true,
     }
