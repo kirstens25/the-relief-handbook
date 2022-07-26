@@ -17,7 +17,7 @@ const createClass = asyncHandler(async (req, res) => {
     }
     const className = await Class.create({
         text: req.body.text, // get help with this... is it body.text?
-        teacher: req.teacher.id
+        teacher: req.teacher.id 
     });
     res.status(200).json(className);
 });
@@ -26,7 +26,7 @@ const createClass = asyncHandler(async (req, res) => {
 const updateClass = asyncHandler(async (req, res) => {
     const classes = await Class.findById(req.params.id)
   
-    if (!goal) {
+    if (!classes) {
       res.status(400)
       throw new Error('Class not found')
     }
@@ -49,9 +49,6 @@ const updateClass = asyncHandler(async (req, res) => {
   
     res.status(200).json(updatedClass)
   })
-
-
-  // up to here
 
 // deleteClass | DELETE route api/class (private)
 const deleteClass = asyncHandler(async (req, res) => {
@@ -85,4 +82,4 @@ module.exports = {
     createClass,
     updateClass,
     deleteClass,
-  }
+  };
