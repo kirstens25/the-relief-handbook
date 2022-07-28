@@ -40,7 +40,7 @@ const updateClass = asyncHandler(async (req, res) => {
     // Make sure the logged in user/teacher matches the class teacher
     if (classes.teacher.toString() !== req.teacher.id) {
       res.status(401)
-      throw new Error('Teacher not authorized')
+      throw new Error('Teacher not authorised')
     }
   
     const updatedClass = await Class.findByIdAndUpdate(req.params.id, req.body, {
@@ -77,9 +77,4 @@ const deleteClass = asyncHandler(async (req, res) => {
   })
   
 
-module.exports = {
-    getClass,
-    createClass,
-    updateClass,
-    deleteClass,
-  };
+module.exports = { getClass, createClass, updateClass, deleteClass };
