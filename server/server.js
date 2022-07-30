@@ -3,7 +3,7 @@ const express = require('express');
 const { errorHandler } = require('./helper/error');
 const connectDB = require('./config/connection.js');
 const dotenv = require('dotenv').config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6000;
 
 connectDB();
 
@@ -29,4 +29,4 @@ app.use('api/teacher', require('./routes/teacherRoutes'))
 
 app.use(errorHandler) // is this needed?
 
-app.listen(port, () => console.log(`Server started on port${port}`))
+app.listen(port, () => console.log(`Server started on port ${port}`))
