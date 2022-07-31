@@ -9,12 +9,12 @@ export default function Register() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    class_number: '',
+    classroom: '',
     password: '',
     password2: '',
   })
 
-  const { name, email, classNumber, password, password2, } = formData
+  const { name, email, classroom, password, password2, } = formData
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -99,9 +99,9 @@ export default function Register() {
             <input
               type='text'
               className='form-control'
-              id='class-number'
-              name='ClassNumber'
-              value={classNumber}
+              id='classroom'
+              name='classroom'
+              value={classroom}
               placeholder='Enter your classroom number'
               onChange={onChange}
             />

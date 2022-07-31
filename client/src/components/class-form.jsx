@@ -18,7 +18,7 @@ export default function ClassForm() {
     <section className='form'>
       <form onSubmit={onSubmit}>
         <div className='form-group'>
-          <label htmlFor='text'>Goal</label>
+          <label htmlFor='text'>Class</label>
           <input
             type='text'
             name='text'

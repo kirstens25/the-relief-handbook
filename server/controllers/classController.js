@@ -1,11 +1,11 @@
 const asyncHandler = require('express-async-handler');
 
-const Class = require('../models/class');
+const Classroom = require('../models/classroom');
 const User = require('../models/user');
 
-// getClass | GET route api/class (private)
+// getClass | GET route api/classroom (private)
 const getClass = asyncHandler(async (req, res) => {
-    const className = await Class.find({ user: req.user.id })
+    const className = await Classroom.find({ user: req.user.id })
     res.status(200).json(className)
 });
 
@@ -15,7 +15,7 @@ const createClass = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Please add a class name')
     }
-    const className = await Class.create({  
+    const className = await Classroom.create({  
         text: req.body.text, // get help with this... is it body.text?
         user: req.user.id 
     });
@@ -24,7 +24,7 @@ const createClass = asyncHandler(async (req, res) => {
 
 // updateClass | PUT route api/class (private)
 const updateClass = asyncHandler(async (req, res) => {
-    const classes = await Class.findById(req.params.id)
+    const classes = await Classroom.findById(req.params.id)
   
     if (!classes) {
       res.status(400)
@@ -52,7 +52,7 @@ const updateClass = asyncHandler(async (req, res) => {
 
 // deleteClass | DELETE route api/class (private)
 const deleteClass = asyncHandler(async (req, res) => {
-    const classes = await Class.findById(req.params.id)
+    const classes = await Classroom.findById(req.params.id)
   
     if (!classes) {
       res.status(400)
@@ -66,7 +66,7 @@ const deleteClass = asyncHandler(async (req, res) => {
     }
   
     // Make sure the logged in user/teacher matches the class teacher
-    if (goal.user.toString() !== req.user.id) {
+    if (Classroom.user.toString() !== req.user.id) {
       res.status(401)
       throw new Error('Teacher not authorized')
     }

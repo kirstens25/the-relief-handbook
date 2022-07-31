@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: false })) // is this needed?
 
-app.use('api/class', require('./routes/classRoutes'))
+app.use('api/classroom', require('./routes/classRoutes'))
 app.use('api/user', require('./routes/userRoutes'))
 
 if (process.env.NODE_ENV === 'production') {
@@ -22,8 +22,8 @@ if (process.env.NODE_ENV === 'production') {
         path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
       )
     );
-  } else {
-    app.get('api/class', (req, res) => {res.json({message: 'Get Class Name/Number'}));
+  } else { app.get('api/classroom', (req, res) => 
+    {res.json({message: 'Get Classroom Name/Number'})});
   }
 
 app.use(errorHandler) // is this needed?
