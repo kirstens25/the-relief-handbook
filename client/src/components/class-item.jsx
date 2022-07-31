@@ -3,6 +3,7 @@ import { deleteClass } from '../features/classes/classSlice'
 
 export default function ClassItem ({ classroom }) {
   const dispatch = useDispatch()
+console.log(JSON.stringify(classroom)) // fiddling here
 
   return (
     <div className='classroom'>
@@ -12,5 +13,4 @@ export default function ClassItem ({ classroom }) {
         X
       </button>
     </div>
-  )
-}
+  )}

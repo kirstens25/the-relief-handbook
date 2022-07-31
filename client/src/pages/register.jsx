@@ -73,7 +73,7 @@ export default function Register() {
 
       <section className='form'>
         <form onSubmit={onSubmit}>
-          <div className="mt-8 space-y-6">
+          <div className='form-group'>
             <input
               type='text'
               className='form-control'

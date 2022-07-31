@@ -11,12 +11,9 @@ const classSchema = mongoose.Schema(
             required: true ['Please add a class number.']
         }
     },
-
-    // add fields here above (see screenshot from Sam)
-
     {
         timestamps: true,
     }
 )
-module.exports = mongoose.model('Class', classSchema)
+module.exports = mongoose.model('Classroom', classSchema)
 
