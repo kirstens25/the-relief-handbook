@@ -10,23 +10,23 @@ import DailyInfo from './pages/daily-info'
 
 function App() {
   return (
-    <>
-    <Router>
-   <div class="bg-red-500">
-<Routes>   
-  <Route path='/' element={<Dashboard />} />
-  <Route path='/' element={<Login />} />
-  <Route path='/' element={<Register />} />
-  <Route path='/' element={<classInfo />} />
-  <Route path='/' element={<studentInfo />} />
-  <Route path='/' element={<dailyInfo />} />
+<>
+<Router>
+  <div className='container'>
+    {/* <Header /> */}
+    <Routes>
+      <Route path='/' element={<Dashboard />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/register' element={<Register />} />
 
-
-  </Routes>
-  
+   <Route path='/class-info' element={<classInfo />} />
+   <Route path='/student-info' element={<studentInfo />} />
+   <Route path='/daily-info' element={<dailyInfo />} />
+    </Routes>
   </div>
-    </Router>
-    </>
+</Router>
+
+</>
   );
 }
 

@@ -15,7 +15,7 @@ const createClass = asyncHandler(async (req, res) => {
         res.status(400)
         throw new Error('Please add a class name')
     }
-    const className = await Class.create({
+    const className = await Class.create({  
         text: req.body.text, // get help with this... is it body.text?
         teacher: req.teacher.id 
     });

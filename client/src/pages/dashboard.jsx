@@ -5,6 +5,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
+import Logo from '../assets/favicon.ico'
 
 const user = {
   name: 'Mrs James',
@@ -16,7 +17,7 @@ const navigation = [
   { name: 'Daily Dashboard', href: '#', current: true },
   { name: 'Schedule', href: '#', current: false },
   { name: 'Class Info', href: '#', current: false },
-  { name: 'Student', href: '#', current: false }
+  { name: 'Student Info', href: '#', current: false }
 ]
 const userNavigation = [
 //   { name: 'Your Profile', href: '#' },
@@ -24,21 +25,9 @@ const userNavigation = [
   { name: 'Sign out', href: '#' },
 ]
 
-// function Dashboard(...classes) {
-//   return classes.filter(Boolean).join(' ')
-// }
-
 export default function Dashboard() {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-100">
-        <body class="h-full">
-        ```
-      */}
       <div className="min-h-full">
         <Disclosure as="nav" className="bg-gray-800">
           {({ open }) => (
@@ -48,8 +37,8 @@ export default function Dashboard() {
                   <div className="flex items-center">
                     <div className="flex-shrink-0">
                       <img
-                        className="h-8 w-8"
-                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+                        className="h-10 w-10"
+                        src={Logo}
                         alt="Workflow"
                       />
                     </div>
@@ -62,7 +51,7 @@ export default function Dashboard() {
                             className={(
                               item.current
                                 ? 'bg-gray-900 text-white'
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                : 'text-white-300 hover:bg-gray-700 hover:text-white',
                               'px-3 py-2 rounded-md text-sm font-medium'
                             )}
                             aria-current={item.current ? 'page' : undefined}
@@ -75,13 +64,13 @@ export default function Dashboard() {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
-                      <button
+                      {/* <button
                         type="button"
                         className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                       >
                         <span className="sr-only">View notifications</span>
                         <BellIcon className="h-6 w-6" aria-hidden="true" />
-                      </button>
+                      </button> */}
 
                       {/* Profile dropdown */}
                       <Menu as="div" className="ml-3 relative">
