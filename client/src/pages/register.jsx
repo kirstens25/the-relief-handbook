@@ -1,3 +1,5 @@
+// ONLY BRAD FILE
+
 import { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -8,11 +10,12 @@ export default function Register() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    class_number: '',
     password: '',
     password2: '',
   })
 
-  const { name, email, password, password2 } = formData
+  const { name, email, classNumber, password, password2, } = formData
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -64,14 +67,14 @@ export default function Register() {
     <>
       <section className='heading'>
         <h1>
-          <FaUser /> Register
+        Register
         </h1>
-        <p>Please create an account</p>
+        <p>Welcome Teacher! Please create an account.</p>
       </section>
 
       <section className='form'>
         <form onSubmit={onSubmit}>
-          <div className='form-group'>
+          <div className="mt-8 space-y-6">
             <input
               type='text'
               className='form-control'
@@ -89,7 +92,18 @@ export default function Register() {
               id='email'
               name='email'
               value={email}
-              placeholder='Enter your email'
+              placeholder='Enter your work email'
+              onChange={onChange}
+            />
+          </div>
+          <div className='form-group'>
+            <input
+              type='text'
+              className='form-control'
+              id='class-number'
+              name='ClassNumber'
+              value={classNumber}
+              placeholder='Enter your classroom number'
               onChange={onChange}
             />
           </div>
@@ -111,7 +125,7 @@ export default function Register() {
               id='password2'
               name='password2'
               value={password2}
-              placeholder='Confirm password'
+              placeholder='Confirm your password'
               onChange={onChange}
             />
           </div>
