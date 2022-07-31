@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const classSchema = mongoose.Schema(
     {
-        teacher: {
+        user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'Teacher'
+        ref: 'User'
     },
         class_number: {
             type: String,

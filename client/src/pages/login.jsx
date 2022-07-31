@@ -1,62 +1,58 @@
 import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { register, reset } from '../features/auth/authSlice'
-// import Spinner from '../components/Spinner'
+import { login, reset } from '../features/auth/authSlice'
+import Spinner from '../components/spinner'
 
 export default function Login() {
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-  })
-
-  const { email, password } = formData
-
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
-  )
-
-  useEffect(() => {
-    if (isError) {
-      toast.error(message)
+    const [formData, setFormData] = useState({
+      email: '',
+      password: '',
+    })
+  
+    const { email, password } = formData
+  
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+  
+    const { user, isLoading, isError, isSuccess, message } = useSelector(
+      (state) => state.auth
+    )
+  
+    useEffect(() => {
+      if (isError) {
+        toast.error(message)
+      }
+  
+      if (isSuccess || user) {
+        navigate('/')
+      }
+  
+      dispatch(reset())
+    }, [user, isError, isSuccess, message, navigate, dispatch])
+  
+    const onChange = (e) => {
+      setFormData((prevState) => ({
+        ...prevState,
+        [e.target.name]: e.target.value,
+      }))
     }
-
-    if (isSuccess || user) {
-      navigate('/')
-    }
-
-    dispatch(reset())
-  }, [user, isError, isSuccess, message, navigate, dispatch])
-
-  const onChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }))
-  }
-
-  const onSubmit = (e) => {
-    e.preventDefault()
-
-    if (password !== password2) {
-      toast.error('Passwords do not match')
-    } else {
+  
+    const onSubmit = (e) => {
+      e.preventDefault()
+  
       const userData = {
-        name,
         email,
         password,
       }
-
-      dispatch(register(userData))
+  
+      dispatch(login(userData))
     }
-  }
-
-  if (isLoading) {
-    return <Spinner />
-  }
+  
+    if (isLoading) {
+      return <Spinner />
+    }
 
   return (
     <>

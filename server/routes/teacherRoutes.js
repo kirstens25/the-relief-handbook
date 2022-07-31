@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { createTeacher, loginTeacher, getMyProfile } = require('../controllers/teacherController')
+const { createTeacher, loginTeacher, getMyProfile } = require('../controllers/userController')
 const { protect } = require('../helper/auth')
 
 // Adding a new teacher (user)

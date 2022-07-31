@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const asyncHandler = require('express-async-handler');
-const Teacher = require('../models/teacher');
+const User = require('../models/user');
 const { useReducer } = require('react');
 
 
@@ -26,7 +26,7 @@ const salt = await bcrypt.genSalt(10);
 const hashedPassword = await bcrypt.hash(password, salt);
 
 // Create teacher
-const user = await Teacher.create({
+const user = await User.create({
     name,
     email,
     password: hashedPassword
@@ -68,14 +68,8 @@ if (user && (await bcrypt.compare(password, user.password))) {
 
 // PRIVATE | getMyProfile | GET route api/teachers/my-profile - show the logged in user's data
 const getMyProfile = asyncHandler(async (req, res) => {
-    const {_id, name, email} = await Teacher.findById(req.user.id)
-
-    res.status(200).json({
-        id: _id,
-        name,
-        email
-    });
-});
+    res.status(200).json(req.user)
+  });
 
 
 // Generate JWT

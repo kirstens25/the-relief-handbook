@@ -1,10 +1,9 @@
-// ONLY BRAD FILE
-
 import { useState, useEffect } from 'react'
+import { toast } from 'react-toastify'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { register, reset } from '../features/auth/authSlice'
-// import Spinner from '../components/Spinner'
+import Spinner from '../components/spinner'
 
 export default function Register() {
   const [formData, setFormData] = useState({

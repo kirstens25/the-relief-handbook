@@ -1,11 +1,11 @@
 const asyncHandler = require('express-async-handler');
 
 const Class = require('../models/class');
-const Teacher = require('../models/teacher');
+const User = require('../models/user');
 
 // getClass | GET route api/class (private)
 const getClass = asyncHandler(async (req, res) => {
-    const className = await Class.find({ teacher: req.teacher.id })
+    const className = await Class.find({ user: req.user.id })
     res.status(200).json(className)
 });
 
@@ -17,7 +17,7 @@ const createClass = asyncHandler(async (req, res) => {
     }
     const className = await Class.create({  
         text: req.body.text, // get help with this... is it body.text?
-        teacher: req.teacher.id 
+        user: req.user.id 
     });
     res.status(200).json(className);
 });
@@ -32,13 +32,13 @@ const updateClass = asyncHandler(async (req, res) => {
     }
   
     // Check for user/teacher
-    if (!req.teacher) {
+    if (!req.user) {
       res.status(401)
       throw new Error('Teacher not found')
     }
   
     // Make sure the logged in user/teacher matches the class teacher
-    if (classes.teacher.toString() !== req.teacher.id) {
+    if (classes.user.toString() !== req.user.id) {
       res.status(401)
       throw new Error('Teacher not authorised')
     }
@@ -60,13 +60,13 @@ const deleteClass = asyncHandler(async (req, res) => {
     }
   
     // Check for user
-    if (!req.teacher) {
+    if (!req.user) {
       res.status(401)
       throw new Error('Teacher not found')
     }
   
     // Make sure the logged in user/teacher matches the class teacher
-    if (goal.teacher.toString() !== req.teacher.id) {
+    if (goal.user.toString() !== req.user.id) {
       res.status(401)
       throw new Error('Teacher not authorized')
     }
