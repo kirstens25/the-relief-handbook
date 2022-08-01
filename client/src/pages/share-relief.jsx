@@ -1,5 +1,4 @@
 export default function ShareRelief() {
-
     return (
         <>
             <div>
@@ -33,5 +32,3 @@ export default function ShareRelief() {
         </>
     )
 }
-
-
