@@ -1,6 +1,6 @@
 export default function ShareRelief() {
     return (
-        <>
+        < >
             <div>
                 <h2>Hi Relief Teacher, here's the information you need!</h2></div>
             <div className="classes">

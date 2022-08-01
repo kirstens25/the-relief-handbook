@@ -16,7 +16,7 @@ export default function Header() {
   return (
       <header className='header'>
       <div className='logo'>
-        <Link to='/'>Go back</Link>
+        <Link to='/'>The Relief Handbook</Link>
         
       </div>
       <ul>
