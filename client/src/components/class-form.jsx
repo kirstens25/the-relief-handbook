@@ -14,20 +14,19 @@ export default function ClassForm() {
     behaviourStrategies: '',
   })
 
-  const { extraCurricActivities, events, morningRoutines, afternoonRoutines, rewardsSystem, behaviourStrategies } = formData
+ const { extraCurricActivities, events, morningRoutines, afternoonRoutines, rewardsSystem, behaviourStrategies } = formData
 
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const history = useHistory();
-  
+
+
   const onSubmit = (e) => {
     e.preventDefault()
 
     dispatch(createClass({ extraCurricActivities, events, morningRoutines, afternoonRoutines, rewardsSystem, behaviourStrategies }))
-    // setFormData('')
-
-    navigate('/share-relief', formData)
+    setFormData('')
+    navigate('/share-relief')
   }
 
   return (
