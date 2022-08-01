@@ -17,7 +17,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server/server.js --ignore client",
+    "start": "node server/server.js",
     "server": "nodemon backend/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm start --prefix client",
