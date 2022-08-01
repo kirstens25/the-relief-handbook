@@ -1,10 +1,10 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
-/* TO ADD: font-family: 'Lato', sans-serif;
-font-family: 'Mali', cursive; */
-
+:root {
+  --green: #508F8A;
+  --blue: #294992;
+  --orange: #D8815C;
+  --red: #D86B62;
+  --grey: #272727;
+}
 
 * {
   margin: 0;
@@ -20,7 +20,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--blue);
 }
 
 p {
@@ -38,7 +38,7 @@ li {
 h1,
 h2,
 h3 {
-  /* font-weight: 600; */
+  font-weight: 500;
   margin-bottom: 10px;
   font-family: 'Mali';
 }
@@ -73,10 +73,11 @@ h3 {
 .header ul li a {
   display: flex;
   align-items: center;
+  color: var(--blue)
 }
 
 .header ul li a:hover {
-  color: #777;
+  color: var(--green);
 }
 
 .header ul li a svg {
@@ -84,16 +85,51 @@ h3 {
 }
 
 .heading {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 700;
   margin-bottom: 50px;
   padding: 0 20px;
 }
 
 .heading p {
-  color: #828282;
+  color: var(--grey);
   font-family: 'Lato';
   font-weight: 400;
+}
+
+.section-header1 {
+  color: var(--red);
+  font-weight: 400;
+  text-align: left;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
+}
+
+.section-header2 {
+  color: var(--green);
+  font-weight: 400;
+  text-align: left;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
+}
+
+.section-header3 {
+  color: var(--orange);
+  font-weight: 400;
+  text-align: left;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
+}
+.section-header3 {
+  color: var(--blue);
+  font-weight: 400;
+  text-align: left;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
 }
 
 .classes {
@@ -147,18 +183,22 @@ h3 {
 
 .btn {
   padding: 10px 20px;
-  border: 1px solid #000;
+  /* border: 1px solid --green; */
   border-radius: 5px;
-  background: #000;
+  background: var(--green);
   color: #fff;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 300;
   cursor: pointer;
   text-align: center;
-  appearance: button;
+  /* appearance: button; */
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Lato';
+  border-width: none;
+    border-style: none;
+    border-color: none;
 }
 
 .btn svg {

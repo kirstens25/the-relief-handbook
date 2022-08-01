@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import ClassForm from '../components/class-form'
-import ClassItem from '../components/class-item'
 import Spinner from '../components/spinner'
 import { getClass, reset } from '../features/classes/classSlice'
+import logo from '../assets/logo.png'
 
 export default function Dashboard() {
   const navigate = useNavigate()
@@ -38,23 +38,12 @@ export default function Dashboard() {
   return (
     <>
       <section className='heading'>
+        <img src={logo} width="75%"></img>
         <h1>Welcome {user && user.name}</h1>
-        <p>Relief Dashboard</p>
+        <p>Add Classroom Information</p>
       </section>
 
       <ClassForm />
-
-      <section className='content'>
-        {classes.length > 0 ? (
-          <div className='classroom'>
-            {classes.map((classroom) => (
-              <ClassItem key={classroom._id} classsroom={classroom} />
-            ))}
-          </div>
-        ) : (
-          <h3>You have not set any classes</h3>
-        )}
-      </section>
     </>
   )
 }

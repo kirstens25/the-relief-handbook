@@ -5,9 +5,7 @@ import Header from './components/header'
 import Dashboard from './pages/dashboard'
 import Login from './pages/login'
 import Register from './pages/register'
-import ClassInfo from './pages/class-info'
-import StudentInfo from './pages/student-info'
-import DailyInfo from './pages/daily-info'
+import ShareRelief from './pages/share-relief'
 
 export default function App() {
   return (
@@ -19,10 +17,7 @@ export default function App() {
       <Route path='/' element={<Dashboard />} />
       <Route path='/login' element={<Login />} />
       <Route path='/register' element={<Register />} />
-
-   <Route path='/class-info' element={<ClassInfo />} />
-   <Route path='/student-info' element={<StudentInfo />} />
-   <Route path='/daily-info' element={<DailyInfo />} />
+      <Route path='/share-relief' element={<ShareRelief />} />
     </Routes>
   </div>
 </Router>

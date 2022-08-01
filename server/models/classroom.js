@@ -6,16 +6,32 @@ const classSchema = mongoose.Schema(
         required: true,
         ref: 'User'
     },
-        class_number: {
-            type: String,
-            required: true ['Please add a class number.']
-        },
-
-        text: {
-            type: String,
-            required: true
-        },
-
+    extraCurricActivities: {
+       type: String,
+        required: false,
+    },
+    events: {
+        type: String,
+        required: false,
+    },
+    morningRoutines: {
+        type: String,
+        required: false,
+    },
+    afternoonRoutines: {
+        type: String,
+        required: false,
+    },
+    rewardsSystem: {
+        type: String,
+        required: false,
+    },
+    behaviourStrategies: {
+        type: String,
+        required: false,
+    },
+},
+    {
         timestamps: true,
     }
 )

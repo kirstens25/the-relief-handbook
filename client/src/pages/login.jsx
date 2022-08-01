@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login, reset } from '../features/auth/authSlice'
 import Spinner from '../components/spinner'
+import logo from '../assets/logo.png'
+
 
 export default function Login() {
     const [formData, setFormData] = useState({
@@ -57,6 +59,7 @@ export default function Login() {
   return (
     <>
       <section className='heading'>
+      <img src={logo} width="75%" alt="The Relief Handbook Logo"></img>
         <h1>
         Login
         </h1>

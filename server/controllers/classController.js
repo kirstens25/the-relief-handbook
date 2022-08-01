@@ -54,7 +54,7 @@ const updateClass = asyncHandler(async (req, res) => {
 const deleteClass = asyncHandler(async (req, res) => {
     const classes = await Classroom.findById(req.params.id)
   
-    if (!classes) {
+    if (!classroom) {
       res.status(400)
       throw new Error('Class not found')
     }
