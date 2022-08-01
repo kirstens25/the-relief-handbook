@@ -4,6 +4,11 @@
   --orange: #D8815C;
   --red: #D86B62;
   --grey: #272727;
+  --light-green: #508f8a22;
+  --light-blue: #29499225;
+  --light-orange: #d8815c25;
+  --light-red: #d86c6222;
+  --grey: #272727;
 }
 
 * {
@@ -123,10 +128,45 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 50;
 }
-.section-header3 {
+.section-header4 {
   color: var(--blue);
   font-weight: 400;
   text-align: left;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
+}
+
+.center-section-header1 {
+  color: var(--red);
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
+}
+
+.center-section-header2 {
+  color: var(--green);
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
+}
+
+.center-section-header3 {
+  color: var(--orange);
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  letter-spacing: 50;
+}
+.center-section-header4 {
+  color: var(--blue);
+  font-weight: 400;
+  text-align: center;
   padding-bottom: 2%;
   text-transform: uppercase;
   letter-spacing: 50;
@@ -138,13 +178,32 @@ h3 {
   gap: 10px;
 }
 
-.classroom {
-  background-color: #f4f4f4;
+.classroom1 {
+  background-color: var(--light-red);
   margin: 10px 0;
   padding: 20px 0 10px;
   position: relative;
 }
 
+.classroom2 {
+  background-color: var(--light-green);
+  margin: 10px 0;
+  padding: 20px 0 10px;
+  position: relative;
+}
+
+.classroom3 {
+  background-color: var(--light-orange);
+  margin: 10px 0;
+  padding: 20px 0 10px;
+  position: relative;
+}
+.classroom4 {
+  background-color: var(--light-blue);
+  margin: 10px 0;
+  padding: 20px 0 10px;
+  position: relative;
+}
 .classroom .close {
   position: absolute;
   top: 10px;
