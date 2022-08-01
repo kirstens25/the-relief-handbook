@@ -3,8 +3,8 @@ import { deleteClass } from '../features/classes/classSlice'
 
 export default function ClassItem ({ classroom }) {
   const dispatch = useDispatch()
-console.log(JSON.stringify(classroom)) // fiddling here
 
+  // come back to here
   return (
     <div className='classroom'>
       <div>{new Date(classroom.createdAt).toLocaleString('en-US')}</div>

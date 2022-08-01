@@ -9,9 +9,13 @@ const classSchema = mongoose.Schema(
         class_number: {
             type: String,
             required: true ['Please add a class number.']
-        }
-    },
-    {
+        },
+
+        text: {
+            type: String,
+            required: true
+        },
+
         timestamps: true,
     }
 )

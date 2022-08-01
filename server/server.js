@@ -20,8 +20,8 @@ app.use('/api/users', require('./routes/userRoutes'))
 //     app.get('*', (req, res) =>
 //       res.sendFile(
 //         path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
-// //       )
-// //     );
+//       )
+//     );
 //   } else { app.get('api/classroom', (req, res) => 
 //     {res.json({message: 'Get Classroom Name/Number'})});
 //   }
